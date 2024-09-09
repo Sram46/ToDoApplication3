@@ -1,12 +1,28 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 h2 {
     text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
 }
 
 form {
@@ -15,37 +31,124 @@ form {
     justify-content: space-between;
 }
 
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+/* Task container styles */
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 li {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 12px 15px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-input[type="text"] {
-    width: 70%;
-    padding: 5px;
-}
-
-button {
-    padding: 5px 10px;
-    background-color: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
+li span {
+    font-size: 16px;
+    color: #333;
+    word-break: break-word;
 }
 
 button.delete-btn {
-    background-color: red;
+    background-color: #dc3545;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+button.delete-btn:hover {
+    background-color: #c82333;
 }
 
 button#logout-btn {
     display: block;
     margin: 20px auto;
     background-color: darkred;
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+button#logout-btn:hover {
+    background-color: #a70000;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="text"]#task-input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 12px;
+}
+
+button#task-submit {
+    padding: 12px 20px;
+    background-color: #28a745;
+}
+
+button#task-submit:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input[type="text"]#task-input {
+        width: 100%;
+        margin: 0 0 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+    }
 }
